@@ -1,7 +1,7 @@
 {
   "name": "datocms-plugin-ckeditor-mathtype",
   "homepage": "https://github.com/henok-tesfaye/datocms-plugin-ckeditor-mathtype",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Mathtype integrated CKEditor plugin",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,8 @@
     "datocms",
     "datocms-plugin",
     "field-editor",
-    "string-field"
+    "string-field",
+    "ckeditor-mathtype"
   ],
   "files": [
     "dist",
@@ -31,41 +32,32 @@
     "entryPoint": "dist/index.html",
     "pluginType": "field_editor",
     "fieldTypes": [
-      "string"
+      "text"
     ],
     "parameters": {
-      "global": [
-        {
-          "id": "developmentMode",
-          "label": "Development mode",
-          "type": "boolean",
-          "required": true,
-          "default": false,
-          "hint": "Shows debug messages in console"
-        }
-      ],
+      "global": [],
       "instance": []
     }
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.0",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-proposal-decorators": "^7.1.2",
-    "@babel/preset-react": "^7.0.0",
     "@babel/cli": "^7.0.0-beta.54",
     "@babel/core": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
     "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0-beta.54",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.0-beta",
     "css-loader": "^1.0.0",
     "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
     "generator-datocms-plugin": "^1.0.24",
     "html-webpack-inline-source-plugin": "^0.0.10",
     "html-webpack-plugin": "^3.2.0",
@@ -80,10 +72,11 @@
     "yo": "^3.1.1"
   },
   "dependencies": {
-    "html-webpack-tags-plugin": "^2.0.17",
+    "@ckeditor/ckeditor5-react": "^2.1.0",
     "classname": "^0.0.0",
+    "html-webpack-tags-plugin": "^2.0.17",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "prop-types": "^15.6.2"
+    "react-dom": "^16.5.2"
   }
 }

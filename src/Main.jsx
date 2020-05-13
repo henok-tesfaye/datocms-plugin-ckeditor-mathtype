@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import CKEditor from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '../ckeditor5/build/ckeditor';
 
 import connectToDatoCms from './connectToDatoCms';
 import './style.sass';
@@ -10,17 +12,21 @@ import './style.sass';
 }))
 
 export default class Main extends Component {
-  static propTypes = {
-    fieldValue: PropTypes.bool.isRequired,
-  }
-
   render() {
-    const { fieldValue } = this.props;
-
+    const { plugin, fieldValue } = this.props
     return (
-      <div className="container">
-        {JSON.stringify(fieldValue)}
-      </div>
+      <CKEditor
+        editor={ClassicEditor}
+        data={fieldValue}
+        onInit={(editor) => {
+          // You can store the "editor" and use when it is needed.
+          console.log('Editor is ready to use!', editor);
+        }}
+        onChange={(event, editor) => {
+          const data = editor.getData();
+          plugin.setFieldValue(plugin.fieldPath, data)
+        }}
+      />
     );
   }
 }

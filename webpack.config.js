@@ -14,7 +14,7 @@ module.exports = {
   devServer: {
     contentBase: './',
     disableHostCheck: true,
-    public: 'http://localhost:5000',
+    public: 'https://datocms-plugin-ckeditor-mathtype.localtunnel.me',
   },
   module: {
     rules: [
